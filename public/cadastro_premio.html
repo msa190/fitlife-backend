@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Prêmio - FitLife</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header id="topo">
+    <h1 id="titulo-app">Cadastro de Prêmios</h1>
+  </header>
+
+  <main id="conteudo-principal">
+    <section>
+      <form action="/cadastrar-premio" method="POST" id="form-premio">
+        <div class="form-campo">
+          <label for="titulo">Título do Prêmio:</label>
+          <input type="text" id="titulo" name="titulo" required />
+        </div>
+
+        <div class="form-campo">
+          <label for="descricao">Descrição:</label>
+          <textarea id="descricao" name="descricao" rows="3" required></textarea>
+        </div>
+
+        <div class="form-campo">
+          <label for="preco_pontos">Preço em Pontos:</label>
+          <input type="number" id="preco_pontos" name="preco_pontos" min="1" max="100" required />
+        </div>
+
+        <div class="form-campo">
+          <label for="estoque">Estoque:</label>
+          <input type="number" id="estoque" name="estoque" min="0" max="10" required />
+        </div>
+
+        <div class="form-campo">
+          <label for="estado">Estado:</label>
+          <select id="estado" name="estado" required>
+            <option value="">Selecione</option>
+            <option value="disponível">Disponível</option>
+            <option value="indisponível">Indisponível</option>
+          </select>
+        </div>
+
+        <button type="submit">Salvar Prêmio</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="rodape">
+    <p>© 2025 FitLife. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
