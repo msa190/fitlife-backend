@@ -14,3 +14,9 @@ app.get('/', async (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`)
 })
+
+app.use(express.static('public'));
+app.get('/status', async (req, res) => {
+  const result = await pool.query('SELECT NOW()')
+  res.send(`API online. Hora atual: ${result.rows[0].now}`)
+});

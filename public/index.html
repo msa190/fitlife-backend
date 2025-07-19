@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLife</title>
+</head>
+<body>
+  <header id="topo">
+    <h1 id="titulo-app">FitLife</h1>
+  </header>
+
+  <main id="conteudo-principal">
+    <section id="info-data-hora">
+      <h2>Data e Horário Atual</h2>
+      <p id="data-hora">Carregando...</p>
+      <p><a href="agenda.html">Agenda</a></p>
+    </section>
+  </main>
+
+  <footer id="rodape">
+    <p>© 2025 FitLife. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function atualizarDataHora() {
+      const agora = new Date();
+      const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const data = agora.toLocaleDateString('pt-BR', opcoes);
+      const hora = agora.toLocaleTimeString('pt-BR');
+      document.getElementById('data-hora').textContent = `${data}, ${hora}`;
+    }
+
+    // Atualiza ao carregar
+    atualizarDataHora();
+    // Atualiza a cada segundo
+    setInterval(atualizarDataHora, 1000);
+  </script>
+</body>
+</html>
